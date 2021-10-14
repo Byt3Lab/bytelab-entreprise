@@ -1,18 +1,14 @@
-/**
-* 
-*/
+import multer from "multer";
+import path from "path";
 
-const multer  = require('multer');
-const path    = require('path');
-
-let upload = {
+export default {
     'realisationProfil': () => {
         let storage = multer.diskStorage({
             destination: function(req, file, cb) {
-                let path = path.join('..', '..', 'uploads', 'realisations');
-                req.pathFileUpload = path;  // pour récupérer le chemin du fichier au middelware suivant dans le param req.pathFileUpload
+                let root = path.join('..', '..', 'uploads', 'realisations');
+                req.pathFileUpload = root;  // pour récupérer le chemin du fichier au middelware suivant dans le param req.pathFileUpload
 
-                cb(null, path);
+                cb(null, root);
             },
 
             filename: function (req, file, cb) {
@@ -29,10 +25,10 @@ let upload = {
     'blogProfil': () => {
         let storage = multer.diskStorage({
             destination: function(req, file, cb) {
-                let path = path.join('..', '..', 'uploads', 'blogs');
-                req.pathFileUpload = path;
+                let root = path.join('..', '..', 'uploads', 'blogs');
+                req.pathFileUpload = root;
 
-                cb(null, path);
+                cb(null, root);
             },
 
             filename: function (req, file, cb) {
@@ -49,10 +45,10 @@ let upload = {
     'teamProfil': () => {
         let storage = multer.diskStorage({
             destination: function(req, file, cb) {
-                let path = path.join('..', '..', 'uploads', 'teams');
-                req.pathFileUpload = path;
+                let root = path.join('..', '..', 'uploads', 'teams');
+                req.pathFileUpload = root;
 
-                cb(null, path);
+                cb(null, root);
             },
 
             filename: function (req, file, cb) {
@@ -70,5 +66,3 @@ let upload = {
     * autres ...
     */
 };
-
-module.exports = upload;

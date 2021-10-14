@@ -1,12 +1,8 @@
-/*
-*
-*/
+import nodemailer from "nodemailer";
 
-const mailer = require('nodemailer');
+export default (subject, msg, from, to, options = {}) => {
 
-const mail = (subject, msg, from, to, options = {}) => {
-
-    let transport = mailer.createTransport({
+    let transport = nodemailer.createTransport({
         service : 'gmail',
         auth : {
             user : 'ggm.gomsugaetant@gmail.com',
@@ -36,6 +32,4 @@ const mail = (subject, msg, from, to, options = {}) => {
                 options.success(info, res)
         }
     });
-}
-
-module.exports = mail;
+};

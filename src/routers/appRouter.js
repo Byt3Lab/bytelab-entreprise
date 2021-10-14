@@ -1,12 +1,15 @@
-const express   = require('express');
-const router    = express.Router();
+import { Router } from "express";
+import publicRouter from "./public/publicRouter.js";
+import adminRouter from "./admin/adminRouter.js";
 
-router.use('/', require('./public/publicRouter'))
-    .use('/admin', require('./admin/adminRouter'))
+const router = Router();
+
+router.use('/', publicRouter)
+    .use('/admin', adminRouter)
 ;
 
 router.use((req, res) => {
     res.render('404.ejs', {title: "ByteLab Entreprise"});
 });
 
-module.exports  = router;
+export default router;

@@ -1,9 +1,7 @@
-const path = require('path');
+import path from "path";
 
-const controler = {
+export default {
     "home": async (req, res) => {
         res.render(path.join('public', 'pages', 'index.ejs'), {title: "ByteLab Entreprise"});
     }
 };
-
-module.exports = controler;

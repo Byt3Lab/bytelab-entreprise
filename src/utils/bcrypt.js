@@ -1,12 +1,9 @@
-/**
-* 
-*/
+import bcrypt from "bcrypt";
 
-const bcrypt    = require('bcrypt');
-const salt      = 12;
+const salt = 12;
 
-const hash = {
-    sign: (pass) => {
+export default {
+    hash: (pass) => {
         let sign = bcrypt.hashSync(pass, salt);
         return sign;
     },
@@ -16,5 +13,3 @@ const hash = {
         return bool;
     }
 };
-
-module.exports = hash;

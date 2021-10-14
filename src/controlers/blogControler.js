@@ -1,5 +1,3 @@
-const controler = {
+export default {
 
 };
-
-module.exports = controler;

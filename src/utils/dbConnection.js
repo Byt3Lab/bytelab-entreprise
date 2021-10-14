@@ -1,13 +1,17 @@
-let mongoose = require('mongoose');
-let dbConfig = require('./dbConfig').devlopement;
+import mongoose from "mongoose";
+import dbConfig from "./dbConfig.js";
 
-let uri = "mongodb://" + dbConfig.host + ':' + dbConfig.port + '/' + dbConfig.dbName;
-/**
-* pour mongodb atlas en ligne
-* let uri = dbConfig.cluster;
-*/
+export default () => {
+    const config = dbConfig.mongodb.dev;
 
-mongoose.connect(uri, {useUnifiedTopology: true, useNewUrlParser: true}, function (err) {
-    if (err) console.log("erreur de connection à la base de donnée!");
-    else console.log("base de donnée connectée !");
-});
+    let uri = "mongodb://" + config.host + ':' + config.port + '/' + config.dbName;
+    /**
+    * pour mongodb atlas en ligne
+    * let uri = dbConfig.cluster;
+    */
+    
+    mongoose.connect(uri, {useUnifiedTopology: true, useNewUrlParser: true}, function (err) {
+        if (err) console.log("erreur de connection à la base de donnée!");
+        else console.log("base de donnée connectée !");
+    });
+};
