@@ -1,5 +1,5 @@
-import corps from "./corps.js";
+import cors from "./cors.js";
 
 export {
-    corps
+    cors
 }
