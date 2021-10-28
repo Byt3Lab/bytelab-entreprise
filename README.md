@@ -1,12 +1,8 @@
 # bytelab-entreprise
  
-## clone
-
-`code`
+## clonage du projet en local
     git clone https://github.com/Byt3Lab/bytelab-entreprise.git
-`code`
-## installation 
-
-`code`
+## installation des dépendences
     npm install
-`code`
+## Site déployer
+   https://bytelab-entreprise.herokuapp.com
